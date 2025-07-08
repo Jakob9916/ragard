@@ -1,0 +1,19 @@
+@use './styles/_variables.scss' as *;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  min-width: 100vw;
+  overflow-x: hidden;
+}
+
+#root {
+  margin: 0;
+}
+
+// Lägg till detta:
+.main-content {
+  padding-top: 64px; // Justera till menyns faktiska höjd
+}

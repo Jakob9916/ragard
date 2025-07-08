@@ -1,0 +1,35 @@
+@use './_variables.scss' as *;
+
+.menu {
+  background-color: $background-color-primary;
+  padding: $spacing-medium;
+  color: $text-color-primary;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  gap: $spacing-medium;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.menu-item {
+  a {
+    text-decoration: none;
+    color: $text-color-primary;
+    transition: color $transition-speed $transition-ease;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}

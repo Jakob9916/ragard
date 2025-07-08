@@ -1,0 +1,146 @@
+// Färgvariabler
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$background-color-primary: #2D2D2D;
+$background-color-secondary: #F9F9F9;
+$text-color-primary: #E4EAFF;
+$text-color-secondary: #000000;
+$hover-color: #0056b3; // Färg för hover-effekter
+
+// Typsnitt
+$font-stack: 'Segoe UI', Arial, sans-serif;
+
+// Spacing
+$spacing-unit: 1rem;
+$spacing-small: 0.5rem;
+$spacing-medium: 1.5rem;
+$spacing-large: 3rem;
+
+// Brytpunkter för responsivitet
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Mixins för responsivitet
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-sm}) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: #{$breakpoint-md}) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-lg}) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: #{$breakpoint-xl}) { @content; }
+  }
+}
+
+// Flexbox mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Grid mixin
+@mixin grid($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Padding och margin mixins
+@mixin padding($size) {
+  padding: $size;
+}
+
+@mixin margin($size) {
+  margin: $size;
+}
+
+// Animation variabler
+$transition-speed: 0.3s;
+$transition-ease: ease-in-out;
+$animation-duration-short: 0.2s;
+$animation-duration-medium: 0.5s;
+$animation-duration-long: 1s;
+
+// Hover mixin
+@mixin hover($color) {
+  &:hover {
+    color: $color;
+    transition: color $transition-speed $transition-ease;
+  }
+}
+
+// Fade-in animation
+@mixin fade-in($duration: $animation-duration-medium) {
+  animation: fadeIn $duration $transition-ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Slide-in animation
+@mixin slide-in($direction, $duration: $animation-duration-medium) {
+  @if $direction == left {
+    animation: slideInLeft $duration $transition-ease;
+  } @else if $direction == right {
+    animation: slideInRight $duration $transition-ease;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+// Bounce animation
+@mixin bounce($duration: $animation-duration-medium) {
+  animation: bounce $duration $transition-ease;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+// Rotate animation
+@mixin rotate($duration: $animation-duration-medium) {
+  animation: rotate $duration $transition-ease infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
