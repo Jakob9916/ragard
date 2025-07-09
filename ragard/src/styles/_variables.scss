@@ -1,14 +1,17 @@
 // Färgvariabler
-$primary-color: #007bff;
+$primary-color: #dd8400;
+//$primary-color: #528e39;
+//$primary-color: #eab308;
 $secondary-color: #6c757d;
 $background-color-primary: #2D2D2D;
 $background-color-secondary: #F9F9F9;
 $text-color-primary: #E4EAFF;
 $text-color-secondary: #000000;
-$hover-color: #0056b3; // Färg för hover-effekter
+$hover-color: #528e39; // Färg för hover-effekter
 
 // Typsnitt
-$font-stack: 'Segoe UI', Arial, sans-serif;
+$heading-font: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+$font-stack: 'Roboto', 'Segoe UI', Arial, sans-serif;
 
 // Spacing
 $spacing-unit: 1rem;
