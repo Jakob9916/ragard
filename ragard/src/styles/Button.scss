@@ -27,11 +27,11 @@
 }
 
 .primary-btn {
-  background: $color-primary;
+  background: $primary-color;
   color: $color-on-primary;
-  border: 1px solid $color-primary-dark;
+  border: 1px solid $primary-color;
   &:hover {
-    background: color.adjust($color-primary, $lightness: -10%);
+    background: color.adjust($primary-color, $lightness: -10%);
     color: $color-on-primary;
   }
 }
@@ -39,9 +39,9 @@
 .secondary-btn {
   background: $color-secondary;
   color: $color-on-secondary;
-  border: 1px solid $color-primary;
+  border: 1px solid $primary-color;
   &:hover {
-    background: $color-secondary-dark;
+    background: $primary-color;
     color: $color-on-secondary;
   }
 }

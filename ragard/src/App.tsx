@@ -7,6 +7,7 @@ import Jobs from './pages/Jobs';
 import Partners from './pages/Partners';
 import Troubleshooting from './pages/Troubleshooting';
 import Video from './pages/Video';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/video' element={<Video />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -1,0 +1,59 @@
+@use './_variables.scss' as *;
+
+.footer {
+  background: $background-color-primary;
+  color: $text-color-primary;
+  padding: $spacing-medium 0;
+  border-top: 1px solid $secondary-color;
+  font-size: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $spacing-medium;
+  padding: 0 $spacing-large;
+}
+
+.footer-left, .footer-center, .footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-center {
+  gap: 1rem;
+  a {
+    color: $primary-color;
+    text-decoration: underline;
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+.footer-cert {
+  height: 48px;
+  width: auto;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 4px;
+}
+
+@media (max-width: $breakpoint-md) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-small;
+    padding: 0 $spacing-small;
+  }
+  .footer-left, .footer-center, .footer-right {
+    justify-content: flex-start;
+  }
+}
