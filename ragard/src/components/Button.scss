@@ -1,0 +1,52 @@
+@use 'sass:color';
+@use '../styles/_variables.scss' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-stack;
+  font-weight: 600;
+  border: none;
+  border-radius: $border-radius;
+  padding: $btn-padding;
+  font-size: $btn-font-size;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: $btn-shadow;
+  outline: none;
+  min-width: 120px;
+  min-height: 44px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  &:hover {
+    box-shadow: $btn-shadow-hover;
+  }
+}
+
+.primary-btn {
+  background: $color-primary;
+  color: $color-on-primary;
+  &:hover {
+    background: color.adjust($color-primary, $lightness: -10%);
+    color: $color-on-primary;
+  }
+}
+
+.secondary-btn {
+  background: $color-secondary;
+  color: $color-on-secondary;
+  &:hover {
+    background: $color-secondary-dark;
+    color: $color-on-secondary;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .btn {
+    font-size: 1rem;
+    min-width: 100px;
+    padding: 0.5rem 1.2rem;
+  }
+}

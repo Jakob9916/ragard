@@ -7,7 +7,7 @@ $background-color-primary: #2D2D2D;
 $background-color-secondary: #F9F9F9;
 $text-color-primary: #E4EAFF;
 $text-color-secondary: #000000;
-$hover-color: #528e39; // Färg för hover-effekter
+$hover-color: #dd8400; // Färg för hover-effekter
 
 // Typsnitt
 $heading-font: 'Montserrat', 'Segoe UI', Arial, sans-serif;
@@ -147,3 +147,16 @@ $animation-duration-long: 1s;
     transform: rotate(360deg);
   }
 }
+
+// Knapp-relaterade variabler
+$color-primary: #dd8400;
+$color-primary-dark: #bd7100;
+$color-on-primary: #fff;
+$color-secondary: #f3f4f6;
+$color-secondary-dark: #e5e7eb;
+$color-on-secondary: #222;
+$btn-padding: 0.75rem 2rem;
+$btn-font-size: 1.15rem;
+$btn-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.08);
+$btn-shadow-hover: 0 4px 16px 0 rgba(59, 130, 246, 0.12);
+$border-radius: 2rem;

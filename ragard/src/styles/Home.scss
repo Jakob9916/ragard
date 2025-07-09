@@ -1,4 +1,6 @@
+@use 'sass:color';
 @use './_variables.scss' as *;
+@use '../components/Button.scss';
 
 .dummy-box {
   background: $background-color-secondary;
@@ -75,7 +77,7 @@
   color: #fff;
   font-weight: 600;
   &:hover {
-    background: darken($primary-color, 10%);
+    background: color.adjust($primary-color, $lightness: -10%);
   }
 }
 .secondary-btn {
@@ -87,6 +89,13 @@
     background: $primary-color;
     color: #fff;
   }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .home-hero-right {
