@@ -4,13 +4,14 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import img1 from '../assets/d1.png';
 import img2 from '../assets/d2.png';
 import Button from '../components/Button';
+import Card from '../components/Card';
 
 export default function Home() {
   useScrollAnimation('scroll-fade');
   return (
     <div>
       <div className='home-hero'>
-        <div className='home-hero-left scroll-fade'>
+        <div className='home-hero-left'>
           <h1>RÅGÅRD</h1>
           <h2>RÖR ENERGI KLIMAT & IT</h2>
           <div className='home-hero-buttons'>
@@ -18,7 +19,7 @@ export default function Home() {
             <Button variant='secondary'>Kontakta oss</Button>
           </div>
         </div>
-        <div className='home-hero-right scroll-fade'>
+        <div className='home-hero-right'>
           <div className='hero-img-wrapper'>
             <img src={img1} alt='Dummy 1' className='hero-img img1' />
             <img src={img2} alt='Dummy 2' className='hero-img img2' />
@@ -26,13 +27,12 @@ export default function Home() {
         </div>
       </div>
       {[...Array(8)].map((_, i) => (
-        <div className='dummy-box scroll-fade' key={i}>
-          <h2>Rubrik {i + 1}</h2>
+        <Card title={`Rubrik ${i + 1}`} className='scroll-fade' key={i}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu
             tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque.
           </p>
-        </div>
+        </Card>
       ))}
     </div>
   );

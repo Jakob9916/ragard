@@ -1,0 +1,28 @@
+@use './_variables.scss' as *;
+
+.card {
+  background: $background-color-secondary;
+  margin: $spacing-large auto;
+  padding: $spacing-large;
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s $transition-ease, transform 0.6s $transition-ease;
+  &.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: $spacing-small;
+  color: $text-color-secondary;
+}
+
+.card-content {
+  color: $secondary-color;
+  font-size: 1rem;
+}

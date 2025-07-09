@@ -1,6 +1,6 @@
 @use 'sass:color';
 @use './_variables.scss' as *;
-@use '../components/Button.scss';
+@use './Button.scss';
 
 .dummy-box {
   background: $background-color-secondary;
