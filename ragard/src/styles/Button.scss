@@ -1,23 +1,25 @@
 @use 'sass:color';
 @use './_variables.scss' as *;
 
-.btn {
+.btn, .btn:link, .btn:visited {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: $font-stack;
   font-weight: 600;
-  border: none;
   border-radius: $border-radius;
   padding: $btn-padding;
   font-size: $btn-font-size;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
   box-shadow: $btn-shadow;
   outline: none;
   min-width: 120px;
   min-height: 44px;
+  height: 55px;
   width: 200px;
+  line-height: 55px;
+  box-sizing: border-box;
   text-align: center;
   text-decoration: none;
   margin: 0.5rem 0.5rem 0.5rem 0;
@@ -33,6 +35,7 @@
   &:hover {
     background: color.adjust($primary-color, $lightness: -10%);
     color: $color-on-primary;
+    border: 1px solid color.adjust($primary-color, $lightness: -10%);
   }
 }
 
@@ -43,6 +46,7 @@
   &:hover {
     background: $primary-color;
     color: $color-on-secondary;
+    border: 1px solid $primary-color;
   }
 }
 

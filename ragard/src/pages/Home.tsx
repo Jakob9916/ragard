@@ -15,8 +15,12 @@ export default function Home() {
           <h1>RÅGÅRD</h1>
           <h2>RÖR ENERGI KLIMAT & IT</h2>
           <div className='home-hero-buttons'>
-            <Button variant='primary'>Läs mer</Button>
-            <Button variant='secondary'>Kontakta oss</Button>
+            <Button variant='primary' to='/about'>
+              Läs mer
+            </Button>
+            <Button variant='secondary' to='/contact'>
+              Kontakta oss
+            </Button>
           </div>
         </div>
         <div className='home-hero-right'>
