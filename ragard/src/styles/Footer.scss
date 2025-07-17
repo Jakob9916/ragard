@@ -3,7 +3,7 @@
 .footer {
   background: $background-color-primary;
   color: $text-color-primary;
-  padding: $spacing-medium 0;
+  padding: $spacing-large 0 $spacing-medium 0;
   border-top: 1px solid $secondary-color;
   font-size: 1rem;
   margin-top: 3rem;
@@ -13,32 +13,75 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: $spacing-medium;
+  gap: $spacing-large;
   padding: 0 $spacing-large;
 }
 
-.footer-left, .footer-center, .footer-right {
+.footer-left {
+  flex: 1 1 200px;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 1rem;
+  opacity: 0.8;
+  gap: 0.2rem;
+  span {
+    margin: 0 0.2rem;
+    color: $text-color-primary;
+  }
 }
 
 .footer-center {
-  gap: 1rem;
+  flex: 2 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  span {
+    margin: 0 0.2rem;
+  }
   a {
-    color: $primary-color;
+    color: $text-color-primary;
     text-decoration: underline;
+    font-size: 1.3rem;
+    margin: 0 0.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
     &:hover {
       color: $hover-color;
+    }
+    svg {
+      font-size: 1.3em;
+    }
+  }
+  .footer-policy-link {
+    color: $text-color-primary;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    transition: color $transition-speed $transition-ease, text-decoration $transition-speed $transition-ease;
+    &:hover {
+      color: $primary-color;
     }
   }
 }
 
+.footer-right {
+  flex: 1 1 120px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .footer-cert {
-  height: 48px;
+  height: 60px;
   width: auto;
   background: #fff;
   border-radius: 50%;
@@ -49,11 +92,20 @@
 @media (max-width: $breakpoint-md) {
   .footer-content {
     flex-direction: column;
-    align-items: flex-start;
-    gap: $spacing-small;
+    align-items: center;
+    gap: $spacing-medium;
     padding: 0 $spacing-small;
   }
   .footer-left, .footer-center, .footer-right {
-    justify-content: flex-start;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+  }
+  .footer-left {
+    align-items: center;
+  }
+  .footer-cert {
+    margin-top: $spacing-small;
   }
 }

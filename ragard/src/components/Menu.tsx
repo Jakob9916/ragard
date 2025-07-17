@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Menu.scss'; // Import the styles for the menu
-import logo from '../assets/logo.png'; // Ändra till rätt filnamn om det är svg eller png
+import { NavLink } from 'react-router-dom';
+import '../styles/Menu.scss';
+import logo from '../assets/logo.png';
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
@@ -9,9 +9,9 @@ const Menu = () => {
   return (
     <nav className='menu'>
       <div className='menu-logo'>
-        <Link to='/'>
+        <NavLink to='/'>
           <img src={logo} alt='Rågård logotyp' />
-        </Link>
+        </NavLink>
       </div>
       <button
         className={`menu-burger${open ? ' open' : ''}`}
@@ -24,34 +24,29 @@ const Menu = () => {
       </button>
       <ul className={`menu-list${open ? ' open' : ''}`}>
         <li className='menu-item'>
-          <Link to='/' onClick={() => setOpen(false)}>
+          <NavLink to='/' onClick={() => setOpen(false)} end>
             Hem
-          </Link>
+          </NavLink>
         </li>
         <li className='menu-item'>
-          <Link to='/about' onClick={() => setOpen(false)}>
-            Om oss
-          </Link>
-        </li>
-        <li className='menu-item'>
-          <Link to='/jobs' onClick={() => setOpen(false)}>
-            Jobb
-          </Link>
-        </li>
-        <li className='menu-item'>
-          <Link to='/partners' onClick={() => setOpen(false)}>
-            Partners
-          </Link>
-        </li>
-        <li className='menu-item'>
-          <Link to='/troubleshooting' onClick={() => setOpen(false)}>
+          <NavLink to='/troubleshooting' onClick={() => setOpen(false)}>
             Felsökning
-          </Link>
+          </NavLink>
         </li>
         <li className='menu-item'>
-          <Link to='/video' onClick={() => setOpen(false)}>
-            Video
-          </Link>
+          <NavLink to='/jobs' onClick={() => setOpen(false)}>
+            Jobb
+          </NavLink>
+        </li>
+        <li className='menu-item'>
+          <NavLink to='/partners' onClick={() => setOpen(false)}>
+            Partners
+          </NavLink>
+        </li>
+        <li className='menu-item'>
+          <NavLink to='/about' onClick={() => setOpen(false)}>
+            Om oss
+          </NavLink>
         </li>
       </ul>
     </nav>

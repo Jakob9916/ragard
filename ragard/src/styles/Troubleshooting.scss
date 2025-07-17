@@ -1,0 +1,170 @@
+@use './_variables.scss' as *;
+
+.troubleshooting-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: $spacing-large;
+  width: 100vw;
+  margin: 0;
+  padding: $spacing-large $spacing-small;
+  background-color: $background-color-primary;
+  box-sizing: border-box;
+  margin-top: $spacing-large;
+}
+
+.troubleshooting-left {
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+  h1 {
+    text-align: center;
+    margin-bottom: $spacing-large;
+    color: $primary-color;
+    font-size: 2.2rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+.troubleshooting-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-medium;
+}
+
+.troubleshooting-card {
+  background: $background-color-secondary;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: $spacing-medium $spacing-small;
+  text-decoration: none;
+  color: $text-color-secondary;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-small;
+  transition: box-shadow 0.2s $transition-ease, transform 0.2s $transition-ease;
+  border: 1px solid transparent;
+  min-width: 0;
+  &:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    border: 1px solid $primary-color;
+    transform: translateY(-4px) scale(1.02);
+    .troubleshooting-card-link {
+      color: $primary-color;
+      text-decoration: underline;
+    }
+  }
+  h2 {
+    font-size: 1.2rem;
+    color: $primary-color;
+    margin: 0 0 $spacing-small 0;
+  }
+  p {
+    margin: 0 0 $spacing-small 0;
+    color: $text-color-secondary;
+    font-size: 0.98rem;
+  }
+}
+
+.troubleshooting-card-link {
+  color: $secondary-color;
+  font-size: 1rem;
+  margin-top: auto;
+  transition: color 0.2s $transition-ease, text-decoration 0.2s $transition-ease;
+}
+
+.troubleshooting-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .troubleshooting-images {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-top: 2rem;
+    .img {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      transition: transform 0.4s $transition-ease;
+    }
+    .img3 {
+      width: 320px;
+      height: 320px;
+      left: 100px;
+      top: 120px;
+      z-index: 1;
+      transform: rotate(0deg);
+    }
+    .img4 {
+      width: 240px;
+      height: 240px;
+      right: 240px;
+      bottom: -100px;
+      z-index: 3;
+      transform: rotate(-7deg);
+    }
+    .img5 {
+      width: 240px;
+      height: 240px;
+      right: 20px;
+      bottom: -200px;
+      z-index: 2;
+      transform: rotate(10deg);
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .troubleshooting-layout {
+    grid-template-columns: 1fr;
+    gap: $spacing-medium;
+    width: 100vw;
+    padding: $spacing-medium $spacing-small;
+  }
+  .troubleshooting-right {
+    align-items: center;
+    .troubleshooting-images {
+      width: 300px;
+      height: 300px;
+      .img3 {
+        width: 200px;
+        height: 200px;
+        left: 50px;
+        top: 20px;
+      }
+      .img4 {
+        width: 120px;
+        height: 120px;
+        right: 0px;
+        bottom: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .troubleshooting-layout {
+    padding: $spacing-medium $spacing-small;
+  }
+  .troubleshooting-cards {
+    grid-template-columns: 1fr;
+    gap: $spacing-small;
+  }
+  .troubleshooting-right .troubleshooting-images {
+    width: 220px;
+    height: 220px;
+    .img3 {
+      width: 120px;
+      height: 120px;
+      left: 30px;
+      top: 10px;
+    }
+    .img4 {
+      width: 80px;
+      height: 80px;
+      right: 0px;
+      bottom: 0px;
+    }
+  }
+}

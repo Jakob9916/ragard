@@ -101,6 +101,12 @@
     color: $text-color-primary;
     transition: color $transition-speed $transition-ease;
 
+    &.active {
+      color: $primary-color;
+      font-weight: 700;
+      border-bottom: 2px solid $primary-color;
+    }
+
     &:hover {
       color: $hover-color;
     }
