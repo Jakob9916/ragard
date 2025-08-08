@@ -2,7 +2,7 @@
 
 .menu {
   background-color: $background-color-primary;
-  padding: $spacing-medium;
+  padding: 0 $spacing-medium; // Mindre vertikal padding
   color: $text-color-primary;
   width: 100%;
   box-sizing: border-box;
@@ -10,7 +10,50 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+}
+
+.menu-logo img {
+  max-height: 80px; 
+  width: auto;
+  display: block;
+  padding-bottom: $spacing-small;
+}
+
+.menu-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  margin-left: auto;
+  z-index: 1100;
+
+  span {
+    display: block;
+    width: 36px; // Öka längden på strecken
+    height: 4px;
+    margin: 4px 0;
+    background: $text-color-primary;
+    border-radius: 2px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  &.open span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px); // Justera för längre streck
+  }
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px); // Justera för längre streck
+  }
 }
 
 .menu-list {
@@ -20,6 +63,36 @@
   margin: 0;
   padding: 0;
   justify-content: flex-end;
+  flex: 1;
+  transition: right 0.3s;
+}
+
+// Responsivitet för hamburgermeny
+@media (max-width: 800px) {
+  .menu {
+    height: 80px;
+  }
+  .menu-burger {
+    display: flex;
+  }
+  .menu-list {
+    position: fixed;
+    top: 80px;
+    right: -100vw;
+    flex-direction: column;
+    background: $background-color-primary;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    gap: $spacing-large;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: $spacing-large;
+    transition: right 0.3s;
+    z-index: 1050;
+  }
+  .menu-list.open {
+    right: 0;
+  }
 }
 
 .menu-item {
@@ -27,6 +100,12 @@
     text-decoration: none;
     color: $text-color-primary;
     transition: color $transition-speed $transition-ease;
+
+    &.active {
+      color: $primary-color;
+      font-weight: 700;
+      border-bottom: 2px solid $primary-color;
+    }
 
     &:hover {
       color: $hover-color;

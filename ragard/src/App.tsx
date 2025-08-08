@@ -7,6 +7,8 @@ import Jobs from './pages/Jobs';
 import Partners from './pages/Partners';
 import Troubleshooting from './pages/Troubleshooting';
 import Video from './pages/Video';
+import Integrity from './pages/Integrity';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -19,9 +21,11 @@ function App() {
           <Route path='/jobs' element={<Jobs />} />
           <Route path='/partners' element={<Partners />} />
           <Route path='/troubleshooting' element={<Troubleshooting />} />
-          <Route path='/video' element={<Video />} />
+          <Route path='/video/:id' element={<Video />} />
+          <Route path='/integrity' element={<Integrity />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

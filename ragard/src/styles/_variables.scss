@@ -1,14 +1,19 @@
 // Färgvariabler
-$primary-color: #007bff;
+$primary-color: #dd8400;
+//$primary-color: #dd0000;
+//$primary-color: #528e39;
+//$primary-color: #eab308;
+//$primary-color: #009bdd;
 $secondary-color: #6c757d;
 $background-color-primary: #2D2D2D;
 $background-color-secondary: #F9F9F9;
 $text-color-primary: #E4EAFF;
 $text-color-secondary: #000000;
-$hover-color: #0056b3; // Färg för hover-effekter
+$hover-color: $primary-color; // Färg för hover-effekter
 
 // Typsnitt
-$font-stack: 'Segoe UI', Arial, sans-serif;
+$heading-font: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+$font-stack: 'Roboto', 'Segoe UI', Arial, sans-serif;
 
 // Spacing
 $spacing-unit: 1rem;
@@ -144,3 +149,16 @@ $animation-duration-long: 1s;
     transform: rotate(360deg);
   }
 }
+
+// Knapp-relaterade variabler
+$color-primary: #dd8400;
+$color-primary-dark: #cc7a00;
+$color-on-primary: #E4EAFF;
+$color-secondary: #f3f4f600;
+$color-secondary-dark: #dd8400;
+$color-on-secondary: #E4EAFF;
+$btn-padding: 0.75rem 2rem;
+$btn-font-size: 1.15rem;
+$btn-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.08);
+$btn-shadow-hover: 0 4px 16px 0 rgba(59, 130, 246, 0.12);
+$border-radius: 2rem;

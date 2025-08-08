@@ -12,6 +12,14 @@ dist
 dist-ssr
 *.local
 
+# Ignorera bilder
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.svg
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,0 +1,111 @@
+@use './_variables.scss' as *;
+
+.footer {
+  background: $background-color-primary;
+  color: $text-color-primary;
+  padding: $spacing-large 0 $spacing-medium 0;
+  border-top: 1px solid $secondary-color;
+  font-size: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $spacing-large;
+  padding: 0 $spacing-large;
+}
+
+.footer-left {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 1rem;
+  opacity: 0.8;
+  gap: 0.2rem;
+  span {
+    margin: 0 0.2rem;
+    color: $text-color-primary;
+  }
+}
+
+.footer-center {
+  flex: 2 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  span {
+    margin: 0 0.2rem;
+  }
+  a {
+    color: $text-color-primary;
+    text-decoration: underline;
+    font-size: 1.3rem;
+    margin: 0 0.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    &:hover {
+      color: $hover-color;
+    }
+    svg {
+      font-size: 1.3em;
+    }
+  }
+  .footer-policy-link {
+    color: $text-color-primary;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    transition: color $transition-speed $transition-ease, text-decoration $transition-speed $transition-ease;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.footer-right {
+  flex: 1 1 120px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer-cert {
+  height: 60px;
+  width: auto;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 4px;
+}
+
+@media (max-width: $breakpoint-md) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-medium;
+    padding: 0 $spacing-small;
+  }
+  .footer-left, .footer-center, .footer-right {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+  }
+  .footer-left {
+    align-items: center;
+  }
+  .footer-cert {
+    margin-top: $spacing-small;
+  }
+}
