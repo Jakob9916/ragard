@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Troubleshooting.scss';
 import img3 from '../assets/d2.png';
 import img4 from '../assets/d1.png';
-import img5 from '../assets/d3.png';
+import img5 from '../assets/d4.png';
 
 const troubleshootingData = [
   {
